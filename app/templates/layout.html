@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>mamADIF Manipulator</title>
+</head>
+<style>
+    body {
+        font-family: Tahoma, Geneva, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .content {
+        margin: 30px 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    footer {
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0px;
+    }
+
+    .btn {
+        font-weight: bold;
+        padding: 10px 10px;
+        min-width: 50%
+    }
+
+    a:hover {
+        color: #e24677;
+    }
+</style>
+<body>
+    <h1>mamADIF Manipulator</h1>
+    <hr>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <hr>
+    <footer><a href="/shutdown">Beenden</a> | <a href="/">Neue Datei</a></footer>
+</body>
+</html>

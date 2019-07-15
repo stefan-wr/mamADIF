@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>mamADIF Manipulator</title>
+</head>
+<body>
+    {% for report in adif.reports %}
+        {{ report.get_adif() }}<br>
+    {% endfor %}
+</body>
+</html>

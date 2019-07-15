@@ -1,0 +1,1 @@
+python\python-3.6.8.amd64\python.exe mamADIF.py

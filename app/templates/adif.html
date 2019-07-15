@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <style>
+        #file-link {
+            text-decoration: none;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        th, td {
+            padding: 4px 20px 4px 0px;
+        }
+
+        .fieldname{
+            text-decoration: none;
+        }
+
+        #change-btn-container {
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+        #change-btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tip {
+            text-align: center;
+            font-size:10pt;
+        }
+    </style>
+    <h2>Datei:</h2>
+    <p><a id="file-link" target="_blank" href="/adif-view/{{ adif.filename }}">{{ adif.filename }}</a></p>
+
+    <h3>Anzahl Reports:</h3>
+    <p>{{ adif.number_of_reports }}</p>
+
+    <h3>Felder:</h3>
+    <form method=post>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Häufigkeit</th>
+                <th>Löschen</th>
+                <th>Namen ändern in</th>
+            </tr>
+            {% for name in adif.all_names %}
+            <tr>
+                <td><a class="fieldname" target="_blank" href="http://www.adif.org.uk/308/ADIF_308.htm#QSO_Field_{{ name.upper() }}">{{ name }}</a></td>
+                <td style="text-align:center">{{ adif.all_names[name] }}</td>
+                <td style="text-align:center"><input type="checkbox" name="delete" value="{{ name }}"></td>
+                <td><input type="text" name="{{ name }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div id="change-btn-container">
+            <input class="btn" id="change-btn" type=submit value="Änderungen bestätigen">
+        </div>
+        <p class="tip">Hinweis: das Feld <b>DOK</b> oder <b>dok</b> muss für Amateur-Radio-Log in <b>app_dok</b> umbenannt werden.</i></p>
+    </form>
+{% endblock %}

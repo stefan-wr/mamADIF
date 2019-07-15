@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <style>
+        .content {
+            text-align: center;
+        }
+
+        input {
+            margin: 16px 0px;
+        }
+    </style>
+    <p>ADIF Datei auswählen:</p>
+    <form method=post enctype=multipart/form-data>
+        <input type=file name=file><br>
+        <input class="btn" id="continue-btn" type=submit value=Weiter>
+    </form>
+{% endblock %}
