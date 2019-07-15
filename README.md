@@ -1,5 +1,5 @@
 # mamADIF
-An ADIF (Amateur Data Interchange Format) file manipulator written in Python using flask.
+An ADIF (Amateur Data Interchange Format) file manipulator I wrote for my mum using Python with flask.
 
 ## Build on Windows
 A ready-to-go [WinPython](https://github.com/winpython/winpython) installation is included in the python directory.
